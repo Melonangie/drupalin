@@ -90,27 +90,6 @@
  */
 $databases = array();
 
-if (array_key_exists('OPENSHIFT_APP_NAME', $_SERVER)) {
-  $src = $_SERVER;
-} else {
-  $src = $_ENV;
-}
-
-$databases = array (
-  'default' =>
-  array (
-    'default' =>
-    array (
-      'database' => $src['OPENSHIFT_APP_NAME'],
-      'username' => $src['OPENSHIFT_MYSQL_DB_USERNAME'],
-      'password' => $src['OPENSHIFT_MYSQL_DB_PASSWORD'],
-      'host' => $src['OPENSHIFT_MYSQL_DB_HOST'],
-      'port' => $src['OPENSHIFT_MYSQL_DB_PORT'],
-      'driver' => 'mysql',
-      'prefix' => '',
-    ),
-  ),
-);
 
 /**
  * Customizing database settings.
